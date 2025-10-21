@@ -5,51 +5,137 @@
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>john's rock band setlist :)</title>
 <style>
-  body{font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;margin:0;background:#0f1724;color:#e6eef3;min-height:100vh;padding:28px}
-  .wrap{max-width:1100px;margin:0 auto}
-  h1{font-size:20px;margin:0;margin-bottom:12px}
-  .search-row{display:flex;gap:10px;margin-bottom:14px;align-items:center}
-  .search{flex:1;min-width:180px;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.2);background:rgba(255,255,255,0.05);color:inherit}
-  .filters{display:flex;gap:8px;align-items:center;font-size:13px}
-  .results{background:rgba(255,255,255,0.02);padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.05);min-height:220px}
-  table{width:100%;border-collapse:collapse}
-  th,td{padding:8px 6px;text-align:left;border-bottom:1px dashed rgba(255,255,255,0.07)}
-  th{color:#9aa6b2;font-weight:600;font-size:13px}
-  .highlight{background:yellow;color:#000;padding:2px 4px;border-radius:4px}
-  .small{font-size:13px;color:#9aa6b2}
-  td, th {
-    word-break: keep-all;
-    overflow-wrap: break-word;
-    white-space: normal;
-  }
+ body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+  margin: 0;
+  background: #0f1724;
+  color: #e6eef3;
+  min-height: 100vh;
+  padding: 28px;
+}
+
+.wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 20px;
+  margin: 0 0 12px 0;
+}
+
+.search-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 14px;
+  align-items: center;
+}
+
+.search {
+  flex: 1;
+  min-width: 180px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+  color: inherit;
+}
+
+.filters {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 13px;
+}
+
+.results {
+  background: rgba(255, 255, 255, 0.02);
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  min-height: 220px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed; /* prevents overflow */
+}
+
+th, td {
+  padding: 8px 6px;
+  text-align: left;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.07);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  vertical-align: top;
+}
+
+th {
+  color: #9aa6b2;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.highlight {
+  background: yellow;
+  color: #000;
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+
+.small {
+  font-size: 13px;
+  color: #9aa6b2;
+}
+
 @media (max-width: 600px) {
   body {
     padding: 16px;
   }
+
   h1 {
     font-size: 18px;
   }
+
   .search-row {
     flex-direction: column;
     align-items: stretch;
     gap: 8px;
   }
+
   .filters {
     flex-wrap: wrap;
     font-size: 12px;
   }
+
   table, th, td {
     font-size: 13px;
-    word-break: keep-all;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
     white-space: normal;
   }
+
+  /* slightly wider title column for readability */
   th:nth-child(1),
   td:nth-child(1) {
-    width: 24px;
+    width: 28px;
   }
+
+  th:nth-child(2),
+  td:nth-child(2) {
+    width: 32%;
+  }
+
+  th:nth-child(3),
+  td:nth-child(3) {
+    width: 68%; /* more room for long song titles */
+  }
+
   .results {
     padding: 8px;
-    overflow-x: auto;
+    overflow-x: hidden; /* disable sideways scroll */
   }
 }
 </style>
@@ -146,4 +232,3 @@ searchAndShow();
 
 </body>
 </html>
-
