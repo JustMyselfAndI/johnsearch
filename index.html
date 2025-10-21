@@ -17,6 +17,10 @@
   th{color:#9aa6b2;font-weight:600;font-size:13px}
   .highlight{background:yellow;color:#000;padding:2px 4px;border-radius:4px}
   .small{font-size:13px;color:#9aa6b2}
+  td, th {
+    word-break: keep-all;
+    overflow-wrap: break-word;
+    white-space: normal;
 @media (max-width: 600px) {
   body {
     padding: 16px;
@@ -35,7 +39,8 @@
   }
   table, th, td {
     font-size: 13px;
-    word-break: break-word;
+    word-break: keep-all;
+    white-space: normal;
   }
   th:nth-child(1),
   td:nth-child(1) {
